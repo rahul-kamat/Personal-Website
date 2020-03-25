@@ -27,10 +27,12 @@ const useStyles = createUseStyles({
   },
   textLine: {
     marginLeft: '20px',
+    marginRight: '20px',
     fontWeight: '500',
   },
   textInfo: {
     marginLeft: '40px',
+    marginRight: '20px',
     marginTop: '2px',
     fontWeight: '100',
   },
@@ -102,10 +104,10 @@ function InformationTerminal() {
         => &#123;
       </div>
       <div className={ classNames(classes.text, classes.textObject, classes.textObjectKeyVals) }>
-        "GitHub": { github },
+        "GitHub": "{ github }",
       </div>
       <div className={ classNames(classes.text, classes.textObject, classes.textObjectKeyVals) }>
-        "LinkedIn": { linkedin }
+        "LinkedIn": "{ linkedin }"
       </div>
       <div className={ classNames(classes.text, classes.textObject, classes.textObjectClosingBrace) }>
         &#125;

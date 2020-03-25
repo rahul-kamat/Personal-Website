@@ -10,7 +10,7 @@ const useStyles = createUseStyles({
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
-    backgroundColor: '#344C5A',
+    backgroundColor: '#BBD8DC',
   },
   imageCropper: {
     width: '300px',
@@ -31,7 +31,6 @@ const useStyles = createUseStyles({
     justifyContent: 'center',
     width: '80%',
     textAlign: 'center',
-    marginTop: '20px',
   },
   text: {
     fontFamily: 'Lucida Sans Unicode, Lucida Grande, sans-serif',
@@ -56,6 +55,10 @@ const useStyles = createUseStyles({
     width: '100%',
     height: '20px',
   },
+  spacingContainerTopBottom: {
+    width: '100%',
+    height: '60px',
+  },
 });
 
 
@@ -75,8 +78,9 @@ function BioCard(props) {
 
   return (
     <div className={ classes.cardContainer }>
-      <div className={ classes.spacingContainer } />
+      <div className={ classes.spacingContainerTopBottom } />
       { imgMe }
+      <div className={ classes.spacingContainer } />
       <div className={ classes.textContainer }>
         <div className={ classNames(classes.text, classes.name) }>
         Hi! I'm Rahul.
@@ -85,7 +89,7 @@ function BioCard(props) {
         I'm a full-stack software engineer, obsessed with user-driven application devlopment and consumer-facing software products.
         </div>
       </div>
-      <div className={ classes.spacingContainer } />
+      <div className={ classes.spacingContainerTopBottom } />
     </div>
   );
 }

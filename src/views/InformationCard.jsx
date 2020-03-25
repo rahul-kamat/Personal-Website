@@ -9,7 +9,30 @@ const useStyles = createUseStyles({
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
-    backgroundColor: '#F8DBAA',
+    backgroundColor: '#C26868',
+  },
+  contentContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    width: '80%',
+    textAlign: 'center',
+  },
+  textTitle: {
+    fontFamily: 'Lucida Sans Unicode, Lucida Grande, sans-serif',
+    letterSpacing: '3px',
+    wordSpacing: '2px',
+    color: 'white',
+    textDecoration: 'none',
+    fontStyle: 'normal',
+    fontSize: '20px',
+    fontWeight: '700',
+    fontVariant: 'small-caps',
+    textTransform: 'uppercase',
+  },
+  spacingContainer: {
+    width: '100%',
+    height: '20px',
   },
   spacingContainerTopBottom: {
     width: '100%',
@@ -25,6 +48,13 @@ function InformationCard(props) {
   return (
     <div className={ classes.cardContainer }>
       <div className={ classes.spacingContainerTopBottom } />
+      <div className={ classes.contentContainer }>
+        <div className={ classes.textTitle }>
+          About me
+        </div>
+      </div>
+      <div className={ classes.spacingContainer } />
+      <div className={ classes.spacingContainer } />
       <InformationTerminal />
       <div className={ classes.spacingContainerTopBottom } />
     </div>

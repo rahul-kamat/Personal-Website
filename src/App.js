@@ -1,11 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import BioCard from './views/BioCard';
+import InformationCard from './views/InformationCard'
 import ExperienceCard from './views/ExperienceCard'
 
 function App() {
   return (
-    <div>
+    <div className={ App }>
+      <BioCard />
+      <InformationCard />
       <ExperienceCard />
     </div>
   );
