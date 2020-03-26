@@ -1,5 +1,6 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss'
+import classNames from 'classnames'
 import Experience from './Experience'
 
 const useStyles = createUseStyles({
@@ -9,7 +10,7 @@ const useStyles = createUseStyles({
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
-    backgroundColor: '#F8DBAA',
+    backgroundColor: '#EEEEEE',
   },
   contentContainer: {
     display: 'flex',
@@ -21,7 +22,7 @@ const useStyles = createUseStyles({
     fontFamily: 'Lucida Sans Unicode, Lucida Grande, sans-serif',
     letterSpacing: '2px',
     wordSpacing: '2px',
-    color: 'white',
+    color: '#333333',
     textDecoration: 'none',
     fontStyle: 'normal',
     fontSize: '20px',
@@ -31,12 +32,21 @@ const useStyles = createUseStyles({
   },
   spacingContainer: {
     width: '100%',
+    height: '20px',
+  },
+  spacingContainerExperience: {
+    width: '100%',
     height: '40px',
   },
   spacingContainerTopBottom: {
     width: '100%',
     height: '60px',
   },
+  hline: {
+    width: '90%',
+    height: '1px',
+    backgroundColor: '#333333',
+  }
 });
 
 
@@ -44,18 +54,25 @@ function ExperienceCard(props) {
 
   const classes = useStyles();
 
-  const googleBullets = ['Core Payments Team'];
-  const googleSkills = [];
+  const googleBullets = ['Core Team'];
+  const googleSkills = ['Coming', 'Soon'];
 
-  const amazonBullets = [];
-  const amazonSkills = [];
+  const amazonBullets = ['Team Placement TBD'];
+  const amazonSkills = ['Coming', 'Soon'];
 
   const honeyBullets = ['Droplist Team'];
   const honeySkills = ['Javascript', 'React', 'Google Cloud Platform', 'Kubernetes', 'Docker', 'CircleCI'];
 
-  const dsgBullets = ['Checkout Team', 'Full-Stack Development'];
+  const dsgBullets = ['Checkout Team'];
   const dsgSkills = ['Java', 'TypeScript', 'Angular', 'Spring Boot', 'Postman', 'REST APIs', 'JIRA', 'Redis', 'Agile', 'Pivitol Cloud Foundry'];
 
+  const spacingBetweenExperience = (
+    <React.Fragment>
+      <div className={ classNames(classes.spacingContainer, classes.bottomBorder) } />
+        <div className={ classes.hline } />
+      <div className={ classNames(classes.spacingContainer, classes.bottomBorder) } />
+    </React.Fragment>
+  );
   return (
     <div className={ classes.cardContainer }>
       <div className={ classes.spacingContainerTopBottom } />
@@ -64,8 +81,8 @@ function ExperienceCard(props) {
           Experience
         </div>
       </div>
-      <div className={ classes.spacingContainer } />
 
+      { spacingBetweenExperience }
         <Experience
           companyName='Google'
           startDate='April 2020'
@@ -74,7 +91,7 @@ function ExperienceCard(props) {
           bullets={ googleBullets }
           skills={ googleSkills }
         />
-        <div className={ classes.spacingContainer } />
+        { spacingBetweenExperience }
         <Experience
           companyName='Amazon'
           startDate='June 2020'
@@ -83,7 +100,7 @@ function ExperienceCard(props) {
           bullets={ amazonBullets }
           skills={ amazonSkills }
         />
-        <div className={ classes.spacingContainer } />
+        { spacingBetweenExperience }
         <Experience
           companyName='Honey'
           startDate='January 2020'
@@ -92,7 +109,7 @@ function ExperienceCard(props) {
           bullets={ honeyBullets }
           skills={ honeySkills }
         />
-        <div className={ classes.spacingContainer } />
+        { spacingBetweenExperience }
         <Experience
           companyName='DICK&apos;S Sporting Goods'
           startDate='May 2019'
@@ -101,6 +118,7 @@ function ExperienceCard(props) {
           bullets={ dsgBullets }
           skills={ dsgSkills }
         />
+        { spacingBetweenExperience }
 
       <div className={ classes.spacingContainerTopBottom } />
     </div>
