@@ -7,7 +7,7 @@ import EducationCard from './views/EducationCard'
 import Footer from './views/Footer'
 function App() {
   return (
-    <div className={ App }>
+    <div>
       <BioCard />
       <InformationCard />
       <ExperienceCard />
