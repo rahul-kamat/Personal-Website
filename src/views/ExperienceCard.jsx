@@ -10,7 +10,7 @@ const useStyles = createUseStyles({
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
-    backgroundColor: '#EEEEEE',
+    backgroundColor: '#BBBBBB',
   },
   contentContainer: {
     display: 'flex',

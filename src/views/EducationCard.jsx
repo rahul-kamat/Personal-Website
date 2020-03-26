@@ -10,7 +10,7 @@ const useStyles = createUseStyles({
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
-    backgroundColor: '#A1B984',
+    backgroundColor: '#CC767A',
   },
   contentContainer: {
     display: 'flex',
@@ -92,7 +92,7 @@ function EducationCard(props) {
           skills={ rutgersSkills }
         />
         { spacingBetweenExperience }
-       
+
       <div className={ classes.spacingContainerTopBottom } />
     </div>
   );

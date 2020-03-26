@@ -20,6 +20,7 @@ const useStyles = createUseStyles({
   experienceRow: {
     display: 'flex',
     flexDirection: 'row',
+    flexWrap: 'wrap',
     justifyContent: 'space-between',
     alignItems: 'center',
   },
@@ -115,6 +116,10 @@ const useStyles = createUseStyles({
     marginTop: '7px',
     marginBottom: '7px',
   },
+  spacingContainer: {
+    width: '100%',
+    height: '5px',
+  },
 });
 
 /**
@@ -157,9 +162,9 @@ function Experience(props) {
               { location }
             </div>
         </div>
-
+        <div className={ classes.spacingContainer } />
         <React.Fragment>
-          { bullets.map(function(bullet, index) {
+          { bullets.map(function(bullet) {
               return (
                 <div className={ classes.experienceRowBullet }>
                   <div className={ classNames(classes.textExperience, classes.textBullet) }>
@@ -173,7 +178,7 @@ function Experience(props) {
             })
           }
         </React.Fragment>
-
+        <div className={ classes.spacingContainer } />
         <div className={ classes.experienceRowSkills }>
           { skills.map(function(skill, index) {
               return (

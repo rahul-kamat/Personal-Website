@@ -7,6 +7,14 @@ import instagram from '../images/InstagramIcon.png'
 import facebook from '../images/FacebookIcon.png'
 
 const useStyles = createUseStyles({
+  cardContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+    backgroundColor: '#FAE3C7',
+  },
   footerContainer: {
     width: '100%',
     backgroundColor: 'none',
@@ -60,6 +68,7 @@ function Footer() {
   }, [stylePath]);
   
   return (
+    <div className={ classes.cardContainer }>
       <div className={ classes.footerContainer }>
         <div className={ classes.spacingContainer } />
 
@@ -107,6 +116,7 @@ function Footer() {
 
         <div className={ classes.spacingContainer } />
       </div>
+    </div>
   );
 }
 

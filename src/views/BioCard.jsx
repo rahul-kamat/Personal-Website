@@ -10,7 +10,7 @@ const useStyles = createUseStyles({
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
-    backgroundColor: '#BBD8DC',
+    backgroundColor: '#70B0B1',
   },
   imageCropper: {
     width: '300px',
