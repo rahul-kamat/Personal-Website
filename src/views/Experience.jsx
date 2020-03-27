@@ -143,7 +143,7 @@ function Experience(props) {
       bullets,
       skills,
   } = props;
-  console.log(props);
+
   return (
       <div className={ classes.experienceContainer }>
         <div className={ classes.experienceRow }>
@@ -164,38 +164,41 @@ function Experience(props) {
         </div>
         <div className={ classes.spacingContainer } />
         <React.Fragment>
-          { bullets.map(function(bullet) {
+          { bullets.map((bullet, index) => {
               return (
-                <div className={ classes.experienceRowBullet }>
-                  <div className={ classNames(classes.textExperience, classes.textBullet) }>
-                    ◦
+                <React.Fragment key={ index }>
+                  <div className={ classes.experienceRowBullet }>
+                     <div className={ classNames(classes.textExperience, classes.textBullet) }>
+                      ◦
+                    </div>
+                    <div className={ classNames(classes.textExperience, classes.textBulletPoint) }>
+                      { bullet }
+                    </div>
                   </div>
-                  <div className={ classNames(classes.textExperience, classes.textBulletPoint) }>
-                    { bullet }
-                  </div>
-                </div>
+                </React.Fragment>
               );
             })
           }
         </React.Fragment>
         <div className={ classes.spacingContainer } />
         <div className={ classes.experienceRowSkills }>
-          { skills.map(function(skill, index) {
+          { skills.map((skill, index) => {
               return (
-                <div
-                  className={ classNames(
-                    classes.skillContainer,
-                    companyName==='Google' && ((index % 2 === 0) ? classes.borderColorGoogleBlue : classes.borderColorGoogleRed),
-                    companyName==='Amazon' && ((index % 2 === 0) ? classes.borderColorAmazonBlue : classes.borderColorAmazonOrange),
-                    companyName==='Honey' && ((index % 2 === 0) ? classes.borderColorHoneyOrange : classes.borderColorHoneyWhite),
-                    companyName==='DICK\'S Sporting Goods' && ((index % 2 === 0) ? classes.borderColorDSGGreen : classes.borderColorDSGOrange)
-                  )}
-
-                >
-                  <div className={ classNames(classes.textExperience, classes.textSkill) }>
-                    { skill }
+                <React.Fragment key={ index }>
+                  <div
+                    className={ classNames(
+                      classes.skillContainer,
+                      companyName==='Google' && ((index % 2 === 0) ? classes.borderColorGoogleBlue : classes.borderColorGoogleRed),
+                      companyName==='Amazon' && ((index % 2 === 0) ? classes.borderColorAmazonBlue : classes.borderColorAmazonOrange),
+                      companyName==='Honey' && ((index % 2 === 0) ? classes.borderColorHoneyOrange : classes.borderColorHoneyWhite),
+                      companyName==='DICK\'S Sporting Goods' && ((index % 2 === 0) ? classes.borderColorDSGGreen : classes.borderColorDSGOrange)
+                    )}
+                  >
+                    <div className={ classNames(classes.textExperience, classes.textSkill) }>
+                      { skill }
+                    </div>
                   </div>
-                </div>
+                </React.Fragment>
               );
             })
           }

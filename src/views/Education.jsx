@@ -113,7 +113,7 @@ const useStyles = createUseStyles({
  * @param {string} props.graduationDate
  * @param {string} props.location
  * @param {string[]} props.coursework
- * @param {string[]} props.skills
+ * @param {object[]} props.skills
  */
 function Education(props) {
 
@@ -126,7 +126,7 @@ function Education(props) {
       bullets,
       skills,
   } = props;
-  console.log(props);
+
   return (
       <div className={ classes.EducationContainer }>
         <div className={ classes.EducationRow }>
@@ -152,35 +152,38 @@ function Education(props) {
         <div className={ classes.spacingContainerSmall } />
 
         <React.Fragment>
-          { bullets.map(function(bullet, index) {
+          { bullets.map((bullet, index) => {
               return (
-                <div className={ classes.EducationRowBullet }>
-                  <div className={ classNames(classes.textEducation, classes.textBullet) }>
-                    ◦
+                <React.Fragment key={ index }>
+                  <div className={ classes.EducationRowBullet }>
+                    <div className={ classNames(classes.textEducation, classes.textBullet) }>
+                      ◦
+                    </div>
+                    <div className={ classNames(classes.textEducation, classes.textBulletPoint) }>
+                      { bullet }
+                    </div>
                   </div>
-                  <div className={ classNames(classes.textEducation, classes.textBulletPoint) }>
-                    { bullet }
-                  </div>
-                </div>
+                </React.Fragment>
               );
             })
           }
         </React.Fragment>
-        
+
         <div className={ classes.EducationRowSkills }>
-          { skills.map(function(skill, index) {
+          { skills.map((skill, index) => {
               return (
-                <div
-                  className={ classNames(
+                <React.Fragment key={ index }>
+                  <div
+                    className={ classNames(
                     classes.skillContainer,
                     schoolName.includes('Rutgers') && ((index % 2 === 0) ? classes.borderColorRutgersRednoScarlet : classes.borderColorRutgersWhite),
-                  )}
-
-                >
-                  <div className={ classNames(classes.textEducation, classes.textSkill) }>
-                    { skill }
+                    )}
+                  >
+                    <div className={ classNames(classes.textEducation, classes.textSkill) }>
+                    { skill.value }
+                    </div>
                   </div>
-                </div>
+                </React.Fragment>
               );
             })
           }
