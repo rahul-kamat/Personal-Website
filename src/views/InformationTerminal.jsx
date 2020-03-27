@@ -1,5 +1,6 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss'
+import { Link } from 'react-router-dom'
 import classNames from 'classnames'
 import RahulKamatResume from '../Rahul_Kamat_Resume.pdf'
 
@@ -78,6 +79,15 @@ function InformationTerminal() {
       target="_blank">
         RahulKamatResume.pdf
     </a>
+  );
+
+  const resumeComingSoon = (
+          <Link
+          className={ classNames(classes.text, classes.textLink) }
+          to='/comingsoon'
+          target="_blank">
+            RahulKamatResume.pdf
+        </Link>
   );
 
   const github = (
@@ -181,7 +191,8 @@ function InformationTerminal() {
           > Rahul.resume
         </div>
         <div className={ classNames(classes.text, classes.textInfo) }>
-          => "{ resume }"
+          => "{ resumeComingSoon }"
+          { /* "{ resume }" */ }
         </div>
         <div className={ classes.spacingContainer } />
 
