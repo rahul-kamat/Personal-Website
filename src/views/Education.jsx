@@ -180,7 +180,7 @@ function Education(props) {
                     )}
                   >
                     <div className={ classNames(classes.textEducation, classes.textSkill) }>
-                    { skill.value }
+                    { skill }
                     </div>
                   </div>
                 </React.Fragment>

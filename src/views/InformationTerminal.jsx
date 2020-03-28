@@ -2,7 +2,7 @@ import React from 'react';
 import { createUseStyles } from 'react-jss'
 import { Link } from 'react-router-dom'
 import classNames from 'classnames'
-import RahulKamatResume from '../Rahul_Kamat_Resume.pdf'
+// import RahulKamatResume from '../Rahul_Kamat_Resume.pdf'
 
 const useStyles = createUseStyles({
   topBar: {
@@ -66,35 +66,43 @@ function InformationTerminal() {
   const email = (
     <a
       className={ classNames(classes.text, classes.textLink) }
-      href="mailto:rahulkamat@gmail.com"
-      target="_blank">
+      href='mailto:rahulkamat@gmail.com'
+      target='_blank'
+    >
         rahulkamat@gmail.com
     </a>
   );
 
+/*
   const resume = (
     <a
       className={ classNames(classes.text, classes.textLink) }
       href={ RahulKamatResume }
-      target="_blank">
-        RahulKamatResume.pdf
+      target='_blank'
+      rel='noopener noreferrer'
+    >
+      RahulKamatResume.pdf
     </a>
   );
-
+*/
   const resumeComingSoon = (
-          <Link
-          className={ classNames(classes.text, classes.textLink) }
-          to='/comingsoon'
-          target="_blank">
-            RahulKamatResume.pdf
-        </Link>
+    <Link
+      className={ classNames(classes.text, classes.textLink) }
+      to='/comingsoon'
+      target='_blank'
+      rel='noopener noreferrer'
+    >
+      RahulKamatResume.pdf
+    </Link>
   );
 
   const github = (
     <a
       className={ classNames(classes.text, classes.textLink) }
-      href="https://github.com/rahul-kamat"
-      target="_blank">
+      href='https://github.com/rahul-kamat'
+      target='_blank'
+      rel='noopener noreferrer'
+    >
      @rahul-kamat
     </a>
   );
@@ -102,8 +110,10 @@ function InformationTerminal() {
   const linkedin = (
     <a
       className={ classNames(classes.text, classes.textLink) }
-      href="https://www.linkedin.com/in/rahul-kamat/"
-      target="_blank">
+      href='https://www.linkedin.com/in/rahul-kamat/'
+      target='_blank'
+      rel='noopener noreferrer'
+    >
      @rahul-kamat
     </a>
   );
@@ -173,7 +183,7 @@ function InformationTerminal() {
           > Rahul.interests
         </div>
         <div className={ classNames(classes.text, classes.textInfo) }>
-          => ["Cooking", "Men's Fashion", "Fitness", "Nutrition", "Basketball", "Traveling", "Coffee&#9749;", "Dogs!"]
+          => ["Cooking", "Men's Fashion", "Fitness", "Nutrition", "Basketball", "Traveling", "Coffee<span role='img' aria-label='coffee'>&#9749;</span>", "Dogs!"]
         </div>
         <div className={ classes.spacingContainer } />
 

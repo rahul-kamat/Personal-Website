@@ -58,10 +58,10 @@ function Footer() {
 
   useEffect(() => {
     var head = document.head;
-    var link = document.createElement("link");
+    var link = document.createElement('link');
 
-    link.type = "text/css";
-    link.rel = "stylesheet";
+    link.type = 'text/css';
+    link.rel = 'stylesheet';
     link.href = stylePath;
 
     head.appendChild(link);
@@ -74,7 +74,7 @@ function Footer() {
 
         <div className={ classes.iconsContainer }>
           <div className={ classNames(classes.footerItem, classes.iconContainer) } >
-            <a href="https://linkedin.com/in/rahul-kamat" target="_blank">
+            <a href='https://linkedin.com/in/rahul-kamat' target='_blank' rel='noopener noreferrer'>
               <img
                 className={ classes.icon }
                 src={ linkedin }
@@ -84,7 +84,7 @@ function Footer() {
           </div>
 
           <div className={ classNames(classes.footerItem, classes.iconContainer) } >
-            <a href="https://github.com/rahul-kamat" target="_blank">
+            <a href='https://github.com/rahul-kamat' target='_blank' rel='noopener noreferrer'>
               <img
                 className={ classes.icon }
                 src={ github }
@@ -94,7 +94,7 @@ function Footer() {
           </div>
 
           <div className={ classNames(classes.footerItem, classes.iconContainer) } >
-            <a href="https://instagram.com/rahul__kamat" target="_blank">
+            <a href='https://instagram.com/rahul__kamat' target='_blank' rel='noopener noreferrer'>
               <img
                 className={ classes.icon }
                 src={ instagram }
@@ -104,7 +104,7 @@ function Footer() {
           </div>
 
           <div className={ classNames(classes.footerItem, classes.iconContainer) } >
-            <a href="https://facebook.com/rahulkamat44" target="_blank">
+            <a href='https://facebook.com/rahulkamat44' target='_blank' rel='noopener noreferrer'>
               <img
                 className={ classes.icon }
                 src={ facebook }
