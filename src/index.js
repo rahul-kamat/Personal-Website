@@ -9,10 +9,10 @@ import ComingSoon from './ComingSoon/ComingSoon'
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(
-  <BrowserRouter>
+  <BrowserRouter basename={process.env.PUBLIC_URL}>
    <Switch>
-    <Route exact path="/" component={App} />
-    <Route path="/comingsoon" component={ ComingSoon } />
+    <Route exact path="/" render={ App } />
+    <Route path="/comingsoon" render={ ComingSoon } />
   </Switch>
   </BrowserRouter>,
   rootElement
