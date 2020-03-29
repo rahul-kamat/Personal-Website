@@ -83,9 +83,15 @@ const useStyles = createUseStyles({
   },
   borderColorRutgersRednoScarlet: {
     borderColor: '#CC0033',
+    '&:hover': {
+      backgroundColor: '#CC0033',
+    },
   },
   borderColorRutgersWhite: {
     borderColor: '#FFFFFF',
+    '&:hover': {
+      backgroundColor: '#FFFFFF',
+    },
   },
   textSkill: {
     fontSize: '12px',
