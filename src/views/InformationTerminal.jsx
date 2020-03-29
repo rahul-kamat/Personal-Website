@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react'
 import { createUseStyles } from 'react-jss'
 import { Link } from 'react-router-dom'
 import classNames from 'classnames'
+import { NONAME } from 'dns';
 // import RahulKamatResume from '../Rahul_Kamat_Resume.pdf'
 
 const useStyles = createUseStyles({
   topBar: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
     width: '90%',
     backgroundColor: '#EEEEEE',
-    height: '15px',
+    height: '25px',
     borderRadius: '20px 20px 0px 0px'
   },
   terminalContainer: {
@@ -16,6 +21,10 @@ const useStyles = createUseStyles({
     flexDirection: 'column',
     width: '90%',
     backgroundColor: '#333333',
+  },
+  closeTerminal: {
+    display: 'none',
+    transition: 'opacity 1s ease-out',
   },
   text: {
     fontFamily: 'Monaco Courier New',
@@ -56,10 +65,30 @@ const useStyles = createUseStyles({
     width: '100%',
     height: '20px',
   },
+  circleButtons: {
+    position: 'relative',
+    width: '15px',
+    height: '15px',
+    borderRadius: '50%',
+    border: 'none',
+    marginLeft: '7px',
+  },
+  closeButton: {
+    backgroundColor: '#FF5248',
+    marginLeft: '15px',
+  },
+  minButton: {
+    backgroundColor: '#FFBD48',
+  },
+  maxButton: {
+    backgroundColor: '#3FC950',
+    marginRight: '15px',
+  },
 });
 
 
 function InformationTerminal() {
+  const [terminal, showTerminal] = useState(true);
 
   const classes = useStyles();
 
@@ -137,11 +166,18 @@ function InformationTerminal() {
 
   return (
     <React.Fragment>
-      <div className={ classes.topBar } />
-      <div className={ classes.terminalContainer }>
+      <div className={ classes.topBar }>
+        <button
+          className= { classNames(classes.circleButtons, classes.closeButton) }
+          onClick={ () => showTerminal(!terminal) }>
+        </button>
+        <div className= { classNames(classes.circleButtons, classes.minButton) }></div>
+        <div className= { classNames(classes.circleButtons, classes.maxButton) }></div>
+      </div>
+      <div className={ classNames(classes.terminalContainer, !terminal ? classes.closeTerminal : null) }>
         <div className={ classes.spacingContainer } />
         <div className={ classes.spacingContainer } />
-        
+
         {/* education */}
         <div className={ classNames(classes.text, classes.textLine) }>
           > Rahul.education
@@ -159,7 +195,7 @@ function InformationTerminal() {
           => "Computer Science &amp; Mathematics"
         </div>
         <div className={ classes.spacingContainer } />
-      
+
         {/* graduation */}
         <div className={ classNames(classes.text, classes.textLine) }>
           > Rahul.graduation

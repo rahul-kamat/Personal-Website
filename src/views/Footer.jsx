@@ -41,6 +41,10 @@ const useStyles = createUseStyles({
   icon: {
     width: '100%',
     height: 'auto',
+    '&:hover': {
+     // opacity: '.5',
+      filter: 'invert(100%)',
+    },
   },
   spacingContainer: {
     width: '100%',
@@ -66,7 +70,7 @@ function Footer() {
 
     head.appendChild(link);
   }, [stylePath]);
-  
+
   return (
     <div className={ classes.cardContainer }>
       <div className={ classes.footerContainer }>

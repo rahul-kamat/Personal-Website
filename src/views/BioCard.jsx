@@ -17,6 +17,7 @@ const useStyles = createUseStyles({
     height: '300px',
     position: 'relative',
     overflow: 'hidden',
+    border: '1px solid #FFFFFF',
     borderRadius: '50%',
     display: 'inline-block',
   },
