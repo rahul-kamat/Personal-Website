@@ -22,7 +22,10 @@ const useStyles = createUseStyles({
     width: '90%',
     backgroundColor: '#333333',
   },
-  closeTerminal: {
+  maxWidth: {
+    width: '100%',
+  },
+  minimize: {
     display: 'none',
     transition: 'opacity 1s ease-out',
   },
@@ -66,7 +69,7 @@ const useStyles = createUseStyles({
     height: '20px',
   },
   circleButtons: {
-    position: 'relative',
+    display: 'block',
     width: '15px',
     height: '15px',
     borderRadius: '50%',
@@ -84,11 +87,16 @@ const useStyles = createUseStyles({
     backgroundColor: '#3FC950',
     marginRight: '15px',
   },
+  closed: {
+    display: 'none',
+  }
 });
 
 
 function InformationTerminal() {
-  const [terminal, showTerminal] = useState(true);
+  const [isMin, minimize] = useState(false);
+  const [isMax, maximize] = useState(false);
+  const [isClosed, closed] = useState(false);
 
   const classes = useStyles();
 
@@ -166,15 +174,29 @@ function InformationTerminal() {
 
   return (
     <React.Fragment>
-      <div className={ classes.topBar }>
-        <button
+      <div className={ classNames(classes.topBar, isMax ? classes.maxWidth : null, isClosed ? classes.closed : null) }>
+        <div
           className= { classNames(classes.circleButtons, classes.closeButton) }
-          onClick={ () => showTerminal(!terminal) }>
-        </button>
-        <div className= { classNames(classes.circleButtons, classes.minButton) }></div>
-        <div className= { classNames(classes.circleButtons, classes.maxButton) }></div>
+          onClick={ () => closed(true) }
+        >
+        </div>
+        <div
+          className= { classNames(classes.circleButtons, classes.minButton) }
+          onClick={ () => {
+            minimize(isMax ? false : true);
+            maximize(false);
+          }}
+        />
+        <div
+          className= { classNames(classes.circleButtons, classes.maxButton) }
+          onClick={ () => {
+            maximize(isMin ? false : true);
+            minimize(false);
+          }}
+        >
+        </div>
       </div>
-      <div className={ classNames(classes.terminalContainer, !terminal ? classes.closeTerminal : null) }>
+      <div className={ classNames(classes.terminalContainer, isMin ? classes.minimize : null, isMax ? classes.maxWidth : null, isClosed ? classes.closed : null) }>
         <div className={ classes.spacingContainer } />
         <div className={ classes.spacingContainer } />
 

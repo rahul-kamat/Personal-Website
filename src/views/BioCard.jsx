@@ -1,7 +1,8 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss'
 import classNames from 'classnames'
-import me from '../images/me.png'
+import me from '../images/mee.png'
+import './styles/scrollDownIndicator.css';
 
 const useStyles = createUseStyles({
   cardContainer: {
@@ -10,21 +11,26 @@ const useStyles = createUseStyles({
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
+    height: '100vh',
     backgroundColor: '#70B0B1',
   },
   imageCropper: {
     width: '300px',
     height: '300px',
+    borderRadius: '50%',
+    border: '1px solid #FFFFFF',
     position: 'relative',
     overflow: 'hidden',
-    border: '1px solid #FFFFFF',
-    borderRadius: '50%',
-    display: 'inline-block',
+    transition: '.7s',
+    '&:hover': {
+      webkitTransform: 'scale(1.1)',
+      msTransform: 'scale(1.1)',
+      transform: 'scale(1.1)',
+    },
   },
   imgMe: {
     width: '100%',
     height: 'auto',
-    marginTop: '-27px',
   },
   textContainer: {
     display: 'flex',
@@ -79,7 +85,6 @@ function BioCard(props) {
 
   return (
     <div className={ classes.cardContainer }>
-      <div className={ classes.spacingContainerTopBottom } />
       { imgMe }
       <div className={ classes.spacingContainer } />
       <div className={ classes.textContainer }>
@@ -90,6 +95,7 @@ function BioCard(props) {
         I'm a full-stack software engineer, obsessed with user-driven application devlopment and consumer-facing software products.
         </div>
       </div>
+      <div class='top-panel'></div>
       <div className={ classes.spacingContainerTopBottom } />
     </div>
   );
