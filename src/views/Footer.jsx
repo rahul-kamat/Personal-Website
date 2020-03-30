@@ -41,8 +41,8 @@ const useStyles = createUseStyles({
   icon: {
     width: '100%',
     height: 'auto',
+    transition: '.7s',
     '&:hover': {
-     // opacity: '.5',
       filter: 'invert(100%)',
     },
   },

@@ -84,48 +84,56 @@ const useStyles = createUseStyles({
   },
   borderColorGoogleBlue: {
     borderColor: '#4285F4',
+    transition: '1s',
     '&:hover': {
       backgroundColor: '#4285F4',
     },
   },
   borderColorGoogleRed: {
     borderColor: '#DB4437',
+    transition: '1s',
     '&:hover': {
       backgroundColor: '#DB4437',
     },
   },
   borderColorAmazonBlue: {
     borderColor: '#37475A',
+    transition: '1s',
     '&:hover': {
       backgroundColor: '#37475A',
     },
   },
   borderColorAmazonOrange: {
     borderColor: '#FF9900',
+    transition: '1s',
     '&:hover': {
       backgroundColor: '#FF9900',
     },
   },
   borderColorHoneyOrange: {
     borderColor: '#FF7227',
+    transition: '1s',
     '&:hover': {
       backgroundColor: '#FF7227',
     },
   },
   borderColorHoneyWhite: {
     borderColor: '#FFFFFF',
+    transition: '1s',
     '&:hover': {
       backgroundColor: '#FFFFFF',
     },
   },
   borderColorDSGGreen: {
     borderColor: '#006554',
+    transition: '1s',
     '&:hover': {
       backgroundColor: '#006554',
     },
   },
   borderColorDSGOrange: {
     borderColor: '#D76B00',
+    transition: '1s',
     '&:hover': {
       backgroundColor: '#D76B00',
     },
