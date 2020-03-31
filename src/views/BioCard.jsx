@@ -1,6 +1,7 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss'
 import classNames from 'classnames'
+import FadeIn from 'react-fade-in'
 import me from '../images/mee.png'
 import './styles/scrollDownIndicator.css';
 
@@ -86,16 +87,19 @@ function BioCard(props) {
   return (
     <div className={ classes.cardContainer }>
       { imgMe }
-      <div className={ classes.spacingContainer } />
       <div className={ classes.textContainer }>
+      <div className={ classes.spacingContainer } />
+      <FadeIn delay='500' transitionDuration='1800'>
         <div className={ classNames(classes.text, classes.name) }>
         Hi! I'm Rahul.
         </div>
         <div className={ classNames(classes.text, classes.about) }>
         I'm a full-stack software engineer, obsessed with user-driven application devlopment and consumer-facing software products.
         </div>
+      </FadeIn>
       </div>
-      <div class='top-panel'></div>
+      <div className={ classes.spacingContainerTopBottom } />
+      <div className={ 'topPanel' } />
       <div className={ classes.spacingContainerTopBottom } />
     </div>
   );

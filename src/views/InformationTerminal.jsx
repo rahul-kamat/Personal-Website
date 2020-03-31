@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { createUseStyles } from 'react-jss'
 import { Link } from 'react-router-dom'
 import classNames from 'classnames'
-import { NONAME } from 'dns';
 // import RahulKamatResume from '../Rahul_Kamat_Resume.pdf'
 
 const useStyles = createUseStyles({

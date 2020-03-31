@@ -1,4 +1,4 @@
-.top-panel::before{
+.topPanel::before{
     content: '╲╱';
     color: #fff;
     position: absolute;
@@ -24,7 +24,7 @@
     }
   }
 
-  .top-panel {
+  .topPanel {
     width: 100%;
-    background: #111;
+    align-self: flex-end;
   }
