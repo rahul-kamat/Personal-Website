@@ -81,7 +81,7 @@ function ExperienceCard(props) {
           Experience
         </div>
       </div>
-
+{ /*
       { spacingBetweenExperience }
         <Experience
           companyName='Google'
@@ -100,6 +100,7 @@ function ExperienceCard(props) {
           bullets={ amazonBullets }
           skills={ amazonSkills }
         />
+*/}
         { spacingBetweenExperience }
         <Experience
           companyName='Honey'
