@@ -46,11 +46,30 @@ const useStyles = createUseStyles({
     width: '90%',
     height: '1px',
     backgroundColor: '#333333',
-  }
+  },
+  darkModeBackground: {
+    backgroundColor: '#000000',
+  },
+  darkModeText: {
+    color: '#CCCCCC',
+  },
+  darkModeHline: {
+    backgroundColor: '#333333',
+  },
+  lightModeBackground: {
+    backgroundColor: '#C6C6C6',
+  },
+  lightModeText: {
+    color: '#333333',
+  },
+  lightModeHline: {
+    backgroundColor: '#000000',
+  },
 });
 
 
 function EducationCard(props) {
+  const { darkMode, lightMode } = props;
 
   const classes = useStyles();
 
@@ -70,15 +89,15 @@ function EducationCard(props) {
   const spacingBetweenExperience = (
     <React.Fragment>
       <div className={ classNames(classes.spacingContainer, classes.bottomBorder) } />
-        <div className={ classes.hline } />
+        <div className={ classNames(classes.hline, darkMode ? classes.darkModeHline : null, lightMode ? classes.lightModeHline : null) } />
       <div className={ classNames(classes.spacingContainer, classes.bottomBorder) } />
     </React.Fragment>
   );
   return (
-    <div className={ classes.cardContainer }>
+    <div className={ classNames(classes.cardContainer, darkMode ? classes.darkModeBackground : null, lightMode ? classes.lightModeBackground : null) }>
       <div className={ classes.spacingContainerTopBottom } />
       <div className={ classes.contentContainer }>
-        <div className={ classes.textTitle }>
+        <div className={ classNames(classes.textTitle, darkMode ? classes.darkModeText : null, lightMode ? classes.lightModeText : null) }>
           Education
         </div>
       </div>
@@ -90,6 +109,8 @@ function EducationCard(props) {
           location='New Brunswick, NJ'
           bullets={ rutgersCoursework }
           skills={ rutgersSkills }
+          darkMode={ darkMode }
+          lightMode={ lightMode }
         />
         { spacingBetweenExperience }
 

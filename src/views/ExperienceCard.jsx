@@ -46,11 +46,30 @@ const useStyles = createUseStyles({
     width: '90%',
     height: '1px',
     backgroundColor: '#333333',
-  }
+  },
+  darkModeBackground: {
+    backgroundColor: '#333333',
+  },
+  darkModeText: {
+    color: '#CCCCCC',
+  },
+  darkModeHline: {
+    backgroundColor: '#000000',
+  },
+  lightModeBackground: {
+    backgroundColor: '#FFFFFF',
+  },
+  lightModeText: {
+    color: '#333333',
+  },
+  lightModeHline: {
+    backgroundColor: '#000000',
+  },
 });
 
 
 function ExperienceCard(props) {
+  const { darkMode, lightMode } = props;
 
   const classes = useStyles();
 
@@ -69,15 +88,15 @@ function ExperienceCard(props) {
   const spacingBetweenExperience = (
     <React.Fragment>
       <div className={ classNames(classes.spacingContainer, classes.bottomBorder) } />
-        <div className={ classes.hline } />
+        <div className={ classNames(classes.hline, darkMode ? classes.darkModeHline : null, lightMode ? classes.lightModeHline : null) } />
       <div className={ classNames(classes.spacingContainer, classes.bottomBorder) } />
     </React.Fragment>
   );
   return (
-    <div className={ classes.cardContainer }>
+    <div className={ classNames(classes.cardContainer, darkMode ? classes.darkModeBackground : null, lightMode ? classes.lightModeBackground : null) }>
       <div className={ classes.spacingContainerTopBottom } />
       <div className={ classes.contentContainer }>
-        <div className={ classes.textTitle }>
+        <div className={ classNames(classes.textTitle, darkMode ? classes.darkModeText : null, lightMode ? classes.lightModeText : null) }>
           Experience
         </div>
       </div>
@@ -90,6 +109,8 @@ function ExperienceCard(props) {
           location='Sunnyvale, CA'
           bullets={ googleBullets }
           skills={ googleSkills }
+          darkMode={ darkMode }
+          lightMode={ lightMode }
         />
         { spacingBetweenExperience }
         <Experience
@@ -99,6 +120,8 @@ function ExperienceCard(props) {
           location='Seattle, WA'
           bullets={ amazonBullets }
           skills={ amazonSkills }
+          darkMode={ darkMode }
+          lightMode={ lightMode }
         />
 */}
         { spacingBetweenExperience }
@@ -109,6 +132,8 @@ function ExperienceCard(props) {
           location='Los Angeles, CA'
           bullets={ honeyBullets }
           skills={ honeySkills }
+          darkMode={ darkMode }
+          lightMode={ lightMode }
         />
         { spacingBetweenExperience }
         <Experience
@@ -118,6 +143,8 @@ function ExperienceCard(props) {
           location='Pittsburgh, PA'
           bullets={ dsgBullets }
           skills={ dsgSkills }
+          darkMode={ darkMode }
+          lightMode={ lightMode }
         />
         { spacingBetweenExperience }
 

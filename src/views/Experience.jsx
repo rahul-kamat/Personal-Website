@@ -124,6 +124,12 @@ const useStyles = createUseStyles({
       backgroundColor: '#FFFFFF',
     },
   },
+  lightModeBorderColorHoneyWhite: {
+    borderColor: '#000000',
+    '&:hover': {
+      backgroundColor: '#000000',
+    },
+  },
   borderColorDSGGreen: {
     borderColor: '#006554',
     transition: '1s',
@@ -152,6 +158,12 @@ const useStyles = createUseStyles({
     width: '100%',
     height: '5px',
   },
+  darkModeText: {
+    color: '#CCCCCC',
+  },
+  lightModeText: {
+    color: '#333333',
+  },
 });
 
 /**
@@ -164,6 +176,7 @@ const useStyles = createUseStyles({
  * @param {string[]} props.skills
  */
 function Experience(props) {
+  const { darkMode, lightMode } = props;
 
   const classes = useStyles();
 
@@ -179,18 +192,18 @@ function Experience(props) {
   return (
       <div className={ classes.experienceContainer }>
         <div className={ classes.experienceRow }>
-            <div className={ classNames(classes.textExperience, classes.textCompany) }>
+            <div className={ classNames(classes.textExperience, classes.textCompany, darkMode ? classes.darkModeText : null, lightMode ? classes.lightModeText : null) }>
               { companyName }
             </div>
-            <div className={ classNames(classes.textExperience, classes.textTenure) }>
+            <div className={ classNames(classes.textExperience, classes.textTenure, darkMode ? classes.darkModeText : null, lightMode ? classes.lightModeText : null) }>
               { startDate } - { endDate }
             </div>
         </div>
         <div className={ classes.experienceRow }>
-            <div className={ classNames(classes.textExperience, classes.textPosition) }>
+            <div className={ classNames(classes.textExperience, classes.textPosition, darkMode ? classes.darkModeText : null, lightMode ? classes.lightModeText : null) }>
               Software Engineering Intern
             </div>
-            <div className={ classNames(classes.textExperience, classes.textLocation) }>
+            <div className={ classNames(classes.textExperience, classes.textLocation, darkMode ? classes.darkModeText : null, lightMode ? classes.lightModeText : null) }>
               { location }
             </div>
         </div>
@@ -200,10 +213,10 @@ function Experience(props) {
               return (
                 <React.Fragment key={ index }>
                   <div className={ classes.experienceRowBullet }>
-                     <div className={ classNames(classes.textExperience, classes.textBullet) }>
+                     <div className={ classNames(classes.textExperience, classes.textBullet, darkMode ? classes.darkModeText : null, lightMode ? classes.lightModeText : null) }>
                       ◦
                     </div>
-                    <div className={ classNames(classes.textExperience, classes.textBulletPoint) }>
+                    <div className={ classNames(classes.textExperience, classes.textBulletPoint, darkMode ? classes.darkModeText : null, lightMode ? classes.lightModeText : null) }>
                       { bullet }
                     </div>
                   </div>
@@ -222,11 +235,11 @@ function Experience(props) {
                       classes.skillContainer,
                       companyName==='Google' && ((index % 2 === 0) ? classes.borderColorGoogleBlue : classes.borderColorGoogleRed),
                       companyName==='Amazon' && ((index % 2 === 0) ? classes.borderColorAmazonBlue : classes.borderColorAmazonOrange),
-                      companyName==='Honey' && ((index % 2 === 0) ? classes.borderColorHoneyOrange : classes.borderColorHoneyWhite),
+                      companyName==='Honey' && ((index % 2 === 0) ? classes.borderColorHoneyOrange : (lightMode ? classNames(classes.borderColorHoneyWhite, classes.lightModeBorderColorHoneyWhite) : classes.borderColorHoneyWhite)),
                       companyName==='DICK\'S Sporting Goods' && ((index % 2 === 0) ? classes.borderColorDSGGreen : classes.borderColorDSGOrange)
                     )}
                   >
-                    <div className={ classNames(classes.textExperience, classes.textSkill) }>
+                    <div className={ classNames(classes.textExperience, classes.textSkill, darkMode ? classes.darkModeText : null, lightMode ? classes.lightModeText : null) }>
                       { skill }
                     </div>
                   </div>

@@ -88,14 +88,34 @@ const useStyles = createUseStyles({
   },
   closed: {
     display: 'none',
-  }
+  },
+  darkModeBackgroundTopBar: {
+    backgroundColor: '#999999',
+  },
+  darkModeBackgroundTerminal: {
+    backgroundColor: '#333333',
+  },
+  darkModeText: {
+    color: '#FFFFFF',
+  },
+  lightModeBackgroundTopBar: {
+    backgroundColor: '#AFAFAF',
+  },
+  lightModeBackgroundTerminal: {
+    backgroundColor: '#FFFFFF',
+  },
+  lightModeText: {
+    color: '#000000',
+  },
 });
 
 
-function InformationTerminal() {
+function InformationTerminal(props) {
   const [isMin, minimize] = useState(false);
   const [isMax, maximize] = useState(false);
   const [isClosed, closed] = useState(false);
+
+  const { darkMode, lightMode } = props;
 
   const classes = useStyles();
 
@@ -156,16 +176,16 @@ function InformationTerminal() {
 
   const links = (
     <React.Fragment>
-      <div className={ classNames(classes.text, classes.textObject) }>
+      <div className={ classNames(classes.text, classes.textObject, darkMode ? classes.darkModeText : null, lightMode ? classes.lightModeText : null) }>
         => &#123;
       </div>
-      <div className={ classNames(classes.text, classes.textObject, classes.textObjectKeyVals) }>
+      <div className={ classNames(classes.text, classes.textObject, classes.textObjectKeyVals, darkMode ? classes.darkModeText : null, lightMode ? classes.lightModeText : null) }>
         "GitHub": "{ github }",
       </div>
-      <div className={ classNames(classes.text, classes.textObject, classes.textObjectKeyVals) }>
+      <div className={ classNames(classes.text, classes.textObject, classes.textObjectKeyVals, darkMode ? classes.darkModeText : null, lightMode ? classes.lightModeText : null) }>
         "LinkedIn": "{ linkedin }"
       </div>
-      <div className={ classNames(classes.text, classes.textObject, classes.textObjectClosingBrace) }>
+      <div className={ classNames(classes.text, classes.textObject, classes.textObjectClosingBrace, darkMode ? classes.darkModeText : null, lightMode ? classes.lightModeText : null) }>
         &#125;
       </div>
     </React.Fragment>
@@ -173,7 +193,15 @@ function InformationTerminal() {
 
   return (
     <React.Fragment>
-      <div className={ classNames(classes.topBar, isMax ? classes.maxWidth : null, isClosed ? classes.closed : null) }>
+      <div className={
+        classNames(
+          classes.topBar,
+          isMax ? classes.maxWidth : null,
+          isClosed ? classes.closed : null,
+          darkMode ? classes.darkModeBackgroundTopBar : null,
+          lightMode ? classes.lightModeBackgroundTopBar : null
+        ) }
+      >
         <div
           className= { classNames(classes.circleButtons, classes.closeButton) }
           onClick={ () => closed(true) }
@@ -195,79 +223,88 @@ function InformationTerminal() {
         >
         </div>
       </div>
-      <div className={ classNames(classes.terminalContainer, isMin ? classes.minimize : null, isMax ? classes.maxWidth : null, isClosed ? classes.closed : null) }>
+      <div className={
+        classNames(
+          classes.terminalContainer,
+          isMin ? classes.minimize : null,
+          isMax ? classes.maxWidth : null,
+          isClosed ? classes.closed : null,
+          darkMode ? classes.darkModeBackgroundTerminal : null,
+          lightMode ? classes.lightModeBackgroundTerminal : null
+        ) }
+      >
         <div className={ classes.spacingContainer } />
         <div className={ classes.spacingContainer } />
 
         {/* education */}
-        <div className={ classNames(classes.text, classes.textLine) }>
+        <div className={ classNames(classes.text, classes.textLine, darkMode ? classes.darkModeText : null, lightMode ? classes.lightModeText : null) }>
           > Rahul.education
         </div>
-        <div className={ classNames(classes.text, classes.textInfo) }>
+        <div className={ classNames(classes.text, classes.textInfo, darkMode ? classes.darkModeText : null, lightMode ? classes.lightModeText : null) }>
           => "Rutgers University"
         </div>
         <div className={ classes.spacingContainer } />
 
         {/* major */}
-        <div className={ classNames(classes.text, classes.textLine) }>
+        <div className={ classNames(classes.text, classes.textLine, darkMode ? classes.darkModeText : null, lightMode ? classes.lightModeText : null) }>
           > Rahul.major
         </div>
-        <div className={ classNames(classes.text, classes.textInfo) }>
+        <div className={ classNames(classes.text, classes.textInfo, darkMode ? classes.darkModeText : null, lightMode ? classes.lightModeText : null) }>
           => "Computer Science &amp; Mathematics"
         </div>
         <div className={ classes.spacingContainer } />
 
         {/* graduation */}
-        <div className={ classNames(classes.text, classes.textLine) }>
+        <div className={ classNames(classes.text, classes.textLine, darkMode ? classes.darkModeText : null, lightMode ? classes.lightModeText : null) }>
           > Rahul.graduation
         </div>
-        <div className={ classNames(classes.text, classes.textInfo) }>
+        <div className={ classNames(classes.text, classes.textInfo, darkMode ? classes.darkModeText : null, lightMode ? classes.lightModeText : null) }>
           => "May 2021"
         </div>
         <div className={ classes.spacingContainer } />
 
         {/* work experience */}
-        <div className={ classNames(classes.text, classes.textLine) }>
+        <div className={ classNames(classes.text, classes.textLine, darkMode ? classes.darkModeText : null, lightMode ? classes.lightModeText : null) }>
           > Rahul.workExperience
         </div>
-        <div className={ classNames(classes.text, classes.textInfo) }>
+        <div className={ classNames(classes.text, classes.textInfo, darkMode ? classes.darkModeText : null, lightMode ? classes.lightModeText : null) }>
           => "Software Engineering Intern @ Google, Amazon, Honey, DICK'S Sporting Goods"
         </div>
         <div className={ classes.spacingContainer } />
 
         {/* interests */}
-        <div className={ classNames(classes.text, classes.textLine) }>
+        <div className={ classNames(classes.text, classes.textLine, darkMode ? classes.darkModeText : null, lightMode ? classes.lightModeText : null) }>
           > Rahul.interests
         </div>
-        <div className={ classNames(classes.text, classes.textInfo) }>
+        <div className={ classNames(classes.text, classes.textInfo, darkMode ? classes.darkModeText : null, lightMode ? classes.lightModeText : null) }>
           => ["Cooking", "Men's Fashion", "Fitness", "Nutrition", "Basketball", "Traveling", "Coffee<span role='img' aria-label='coffee'>&#9749;</span>", "Dogs!"]
         </div>
         <div className={ classes.spacingContainer } />
 
         {/* email */}
-        <div className={ classNames(classes.text, classes.textLine) }>
+        <div className={ classNames(classes.text, classes.textLine, darkMode ? classes.darkModeText : null, lightMode ? classes.lightModeText : null) }>
           > Rahul.email
         </div>
-        <div className={ classNames(classes.text, classes.textInfo) }>
+        <div className={ classNames(classes.text, classes.textInfo, darkMode ? classes.darkModeText : null, lightMode ? classes.lightModeText : null) }>
           => "{ email }"
         </div>
         <div className={ classes.spacingContainer } />
 
         {/* resume */}
-        <div className={ classNames(classes.text, classes.textLine) }>
+        <div className={ classNames(classes.text, classes.textLine, darkMode ? classes.darkModeText : null, lightMode ? classes.lightModeText : null) }>
           > Rahul.resume
         </div>
-        <div className={ classNames(classes.text, classes.textInfo) }>
+        <div className={ classNames(classes.text, classes.textInfo, darkMode ? classes.darkModeText : null, lightMode ? classes.lightModeText : null) }>
           => "{ resumeComingSoon }"
           { /* "{ resume }" */ }
         </div>
         <div className={ classes.spacingContainer } />
 
         {/* links */}
-        <div className={ classNames(classes.text, classes.textLine) }>
+        <div className={ classNames(classes.text, classes.textLine, darkMode ? classes.darkModeText : null, lightMode ? classes.lightModeText : null) }>
           > Rahul.links
         </div>
-        <div className={ classNames(classes.text, classes.textInfo) }>
+        <div className={ classNames(classes.text, classes.textInfo, darkMode ? classes.darkModeText : null, lightMode ? classes.lightModeText : null) }>
           { links }
         </div>
         <div className={ classes.spacingContainer } />

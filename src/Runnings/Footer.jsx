@@ -46,6 +46,11 @@ const useStyles = createUseStyles({
       filter: 'invert(100%)',
     },
   },
+  lightModeIcon: {
+    '&:hover': {
+      filter: 'invert(50%)',
+    },
+  },
   spacingContainer: {
     width: '100%',
     height: '10px',
@@ -54,10 +59,19 @@ const useStyles = createUseStyles({
     width: '100%',
     height: '10px',
   },
+  darkModeBackground: {
+    backgroundColor: '#333333',
+  },
+  lightModeBackground: {
+    backgroundColor: '#FFFFFF',
+  },
 });
 
-function Footer() {
+function Footer(props) {
   const [ stylePath ] = useState('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+  const { darkMode, lightMode } = props;
+
   const classes = useStyles();
 
   useEffect(() => {
@@ -72,7 +86,7 @@ function Footer() {
   }, [stylePath]);
 
   return (
-    <div className={ classes.cardContainer }>
+    <div className={ classNames(classes.cardContainer, darkMode ? classes.darkModeBackground : null, lightMode ? classes.lightModeBackground : null) }>
       <div className={ classes.footerContainer }>
         <div className={ classes.spacingContainer } />
 
@@ -80,7 +94,7 @@ function Footer() {
           <div className={ classNames(classes.footerItem, classes.iconContainer) } >
             <a href='https://linkedin.com/in/rahul-kamat' target='_blank' rel='noopener noreferrer'>
               <img
-                className={ classes.icon }
+                className={ classNames(classes.icon, lightMode ? classes.lightModeIcon : null) }
                 src={ linkedin }
                 alt='linkedin'
               />
@@ -90,7 +104,7 @@ function Footer() {
           <div className={ classNames(classes.footerItem, classes.iconContainer) } >
             <a href='https://github.com/rahul-kamat' target='_blank' rel='noopener noreferrer'>
               <img
-                className={ classes.icon }
+                className={ classNames(classes.icon, lightMode ? classes.lightModeIcon : null) }
                 src={ github }
                 alt='github'
               />
@@ -100,7 +114,7 @@ function Footer() {
           <div className={ classNames(classes.footerItem, classes.iconContainer) } >
             <a href='https://instagram.com/rahul__kamat' target='_blank' rel='noopener noreferrer'>
               <img
-                className={ classes.icon }
+                className={ classNames(classes.icon, lightMode ? classes.lightModeIcon : null) }
                 src={ instagram }
                 alt='instagram'
               />
@@ -110,7 +124,7 @@ function Footer() {
           <div className={ classNames(classes.footerItem, classes.iconContainer) } >
             <a href='https://facebook.com/rahulkamat44' target='_blank' rel='noopener noreferrer'>
               <img
-                className={ classes.icon }
+                className={ classNames(classes.icon, lightMode ? classes.lightModeIcon : null) }
                 src={ facebook }
                 alt='facebook'
               />

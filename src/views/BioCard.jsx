@@ -19,7 +19,8 @@ const useStyles = createUseStyles({
     width: '300px',
     height: '300px',
     borderRadius: '50%',
-    border: '1px solid #FFFFFF',
+    border: '1px solid',
+    borderColor: '#FFFFFF',
     position: 'relative',
     overflow: 'hidden',
     transition: '.7s',
@@ -44,7 +45,7 @@ const useStyles = createUseStyles({
     fontFamily: 'Lucida Sans Unicode, Lucida Grande, sans-serif',
     letterSpacing: '2px',
     wordSpacing: '2px',
-    color: 'white',
+    color: '#FFFFFF',
     textDecoration: 'none',
     fontStyle: 'normal',
   },
@@ -67,15 +68,35 @@ const useStyles = createUseStyles({
     width: '100%',
     height: '60px',
   },
+  darkModeBackground: {
+    backgroundColor: '#333333',
+  },
+  darkModeImageBorder: {
+    borderColor: '#000000',
+  },
+  darkModeText: {
+    color: '#CCCCCC',
+  },
+  lightModeBackground: {
+    backgroundColor: '#FFFFFF',
+  },
+  lightModeImageBorder: {
+    borderColor: '#333333'
+  },
+  lightModeText: {
+    color: '#333333',
+  },
 });
 
 
 function BioCard(props) {
 
+  const { darkMode, lightMode } = props;
+
   const classes = useStyles();
 
   const imgMe = (
-    <div className={ classes.imageCropper }>
+    <div className={ classNames(classes.imageCropper, darkMode ? classes.darkModeImageBorder : null, lightMode ? classes.lightModeImageBorder : null) }>
       <img
         className={ classes.imgMe }
         src={ me }
@@ -85,15 +106,15 @@ function BioCard(props) {
   );
 
   return (
-    <div className={ classes.cardContainer }>
+    <div className={ classNames(classes.cardContainer, darkMode ? classes.darkModeBackground : null, lightMode ? classes.lightModeBackground : null) }>
       { imgMe }
       <div className={ classes.textContainer }>
       <div className={ classes.spacingContainer } />
       <FadeIn delay='500' transitionDuration='1800'>
-        <div className={ classNames(classes.text, classes.name) }>
+        <div className={ classNames(classes.text, classes.name, darkMode ? classes.darkModeText : null, lightMode ? classes.lightModeText : null) }>
         Hi! I'm Rahul.
         </div>
-        <div className={ classNames(classes.text, classes.about) }>
+        <div className={ classNames(classes.text, classes.about, darkMode ? classes.darkModeText : null, lightMode ? classes.lightModeText : null) }>
         I'm a full-stack software engineer, obsessed with user-driven application devlopment and consumer-facing software products.
         </div>
       </FadeIn>

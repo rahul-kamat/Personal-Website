@@ -95,6 +95,12 @@ const useStyles = createUseStyles({
       backgroundColor: '#FFFFFF',
     },
   },
+  lightModeBorderColorRutgersWhite: {
+    borderColor: '#000000',
+    '&:hover': {
+      backgroundColor: '#000000',
+    },
+  },
   textSkill: {
     fontSize: '12px',
     fontWeight: '300',
@@ -113,6 +119,12 @@ const useStyles = createUseStyles({
     width: '100%',
     height: '10px',
   },
+  darkModeText: {
+    color: '#CCCCCC',
+  },
+  lightModeText: {
+    color: '#333333',
+  },
 });
 
 /**
@@ -124,6 +136,7 @@ const useStyles = createUseStyles({
  * @param {object[]} props.skills
  */
 function Education(props) {
+  const { darkMode, lightMode } = props;
 
   const classes = useStyles();
 
@@ -138,22 +151,22 @@ function Education(props) {
   return (
       <div className={ classes.EducationContainer }>
         <div className={ classes.EducationRow }>
-            <div className={ classNames(classes.textEducation, classes.textSchool) }>
+            <div className={ classNames(classes.textEducation, classes.textSchool, darkMode ? classes.darkModeText : null, lightMode ? classes.lightModeText : null) }>
               { schoolName }
             </div>
-            <div className={ classNames(classes.textEducation, classes.textLocation) }>
+            <div className={ classNames(classes.textEducation, classes.textLocation, darkMode ? classes.darkModeText : null, lightMode ? classes.lightModeText : null) }>
               { location }
             </div>
         </div>
         <div className={ classes.EducationRow }>
-            <div className={ classNames(classes.textEducation, classes.textGraduation) }>
+            <div className={ classNames(classes.textEducation, classes.textGraduation, darkMode ? classes.darkModeText : null, lightMode ? classes.lightModeText : null) }>
               Grad: { graduationDate }
             </div>
         </div>
 
         <div className={ classes.spacingContainer } />
         <div className={ classes.EducationRow }>
-            <div className={ classNames(classes.textEducation, classes.textCourswork) }>
+            <div className={ classNames(classes.textEducation, classes.textCourswork, darkMode ? classes.darkModeText : null, lightMode ? classes.lightModeText : null) }>
               Coursework:
             </div>
         </div>
@@ -164,10 +177,10 @@ function Education(props) {
               return (
                 <React.Fragment key={ index }>
                   <div className={ classes.EducationRowBullet }>
-                    <div className={ classNames(classes.textEducation, classes.textBullet) }>
+                    <div className={ classNames(classes.textEducation, classes.textBullet, darkMode ? classes.darkModeText : null, lightMode ? classes.lightModeText : null) }>
                       ◦
                     </div>
-                    <div className={ classNames(classes.textEducation, classes.textBulletPoint) }>
+                    <div className={ classNames(classes.textEducation, classes.textBulletPoint, darkMode ? classes.darkModeText : null, lightMode ? classes.lightModeText : null) }>
                       { bullet }
                     </div>
                   </div>
@@ -184,10 +197,10 @@ function Education(props) {
                   <div
                     className={ classNames(
                     classes.skillContainer,
-                    schoolName.includes('Rutgers') && ((index % 2 === 0) ? classes.borderColorRutgersRednoScarlet : classes.borderColorRutgersWhite),
+                    schoolName.includes('Rutgers') && ((index % 2 === 0) ? classes.borderColorRutgersRednoScarlet : (lightMode ? classNames(classes.borderColorHoneyWhite, classes.lightModeBorderColorRutgersWhite) : classes.borderColorRutgersWhite)),
                     )}
                   >
-                    <div className={ classNames(classes.textEducation, classes.textSkill) }>
+                    <div className={ classNames(classes.textEducation, classes.textSkill, darkMode ? classes.darkModeText : null, lightMode ? classes.lightModeText : null) }>
                     { skill }
                     </div>
                   </div>
