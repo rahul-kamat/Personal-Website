@@ -7,16 +7,20 @@ import './index.css';
 import App from './App';
 import ComingSoon from './ComingSoon/ComingSoon'
 import * as serviceWorker from './serviceWorker';
+import { Store } from './store'
+
 
 const hashHistory = createHashHistory({ basename: process.env.PUBLIC_URL });
 const rootElement = document.getElementById("root");
 
 ReactDOM.render(
   <Router history={ hashHistory }>
-     <Switch>
-      <Route exact path="/" render={ App } />
-      <Route path="/comingsoon" render={ ComingSoon } />
-    </Switch>
+    <Store>
+      <Switch>
+        <Route exact path="/" render={ App } />
+        <Route path="/comingsoon" render={ ComingSoon } />
+      </Switch>
+    </Store>
   </Router>,
   rootElement
 );
