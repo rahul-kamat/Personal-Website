@@ -22,6 +22,7 @@ function Home(props) {
         darkMode={ darkMode }
         lightMode={ lightMode}
       />
+                  <a href="edu"></a>
       <InformationCard
         darkMode={ darkMode }
         lightMode={ lightMode}

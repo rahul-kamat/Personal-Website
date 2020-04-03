@@ -3,9 +3,9 @@ import ComingSoonPage from './ComingSoonPage'
 
 function ComingSoon() {
   return (
-    <div>
+    <React.Fragment>
       <ComingSoonPage />
-    </div>
+    </React.Fragment>
   );
 }
 

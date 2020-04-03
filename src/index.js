@@ -5,7 +5,7 @@ import { Router } from 'react-router';
 import { createHashHistory } from 'history'
 import './index.css';
 import App from './App';
-import ComingSoon from './ComingSoon/ComingSoon'
+import ComingSoon from './ComingSoon'
 import * as serviceWorker from './serviceWorker';
 import { Store } from './store'
 

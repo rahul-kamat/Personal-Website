@@ -43,9 +43,6 @@ function Header(props) {
   const darkModeDispatch = React.useContext(DarkMode.Dispatch)
   const lightModeState = React.useContext(LightMode.State)
   const lightModeDispatch = React.useContext(LightMode.Dispatch)
-  const [isDarkMode, setDarkMode] = useState(false);
-
-  const { darkMode, lightMode } = props;
 
   const classes = useStyles();
 
