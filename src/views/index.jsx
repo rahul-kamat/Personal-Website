@@ -3,6 +3,7 @@ import BioCard from './cards/BioCard';
 import InformationCard from './cards/InformationCard'
 import ExperienceCard from './cards/ExperienceCard'
 import EducationCard from './cards/EducationCard'
+import ContactCard from './cards/ContactMe'
 import Header from '../Runnings/Header'
 import Footer from '../Runnings/Footer'
 import { DarkMode } from '../store'
@@ -32,6 +33,10 @@ function Home(props) {
         lightMode={ lightMode}
       />
       <EducationCard
+        darkMode={ darkMode }
+        lightMode={ lightMode}
+      />
+      <ContactCard
         darkMode={ darkMode }
         lightMode={ lightMode}
       />

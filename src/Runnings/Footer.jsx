@@ -41,14 +41,20 @@ const useStyles = createUseStyles({
   icon: {
     width: '100%',
     height: 'auto',
-    transition: '.7s',
+    transition: '1.7s',
     '&:hover': {
       filter: 'invert(100%)',
     },
   },
+  darkModeIcon: {
+    filter: 'invert(100%)',
+    '&:hover': {
+      filter: 'invert(10%)',
+    },
+  },
   lightModeIcon: {
     '&:hover': {
-      filter: 'invert(50%)',
+      filter: 'invert(100%)',
     },
   },
   spacingContainer: {
@@ -60,10 +66,10 @@ const useStyles = createUseStyles({
     height: '10px',
   },
   darkModeBackground: {
-    backgroundColor: '#333333',
+    backgroundColor: '#000000',
   },
   lightModeBackground: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#C6C6C6',
   },
 });
 
@@ -94,7 +100,7 @@ function Footer(props) {
           <div className={ classNames(classes.footerItem, classes.iconContainer) } >
             <a href='https://linkedin.com/in/rahul-kamat' target='_blank' rel='noopener noreferrer'>
               <img
-                className={ classNames(classes.icon, lightMode ? classes.lightModeIcon : null) }
+                className={ classNames(classes.icon, darkMode ? classes.darkModeIcon : null, lightMode ? classes.lightModeIcon : null) }
                 src={ linkedin }
                 alt='linkedin'
               />
@@ -104,7 +110,7 @@ function Footer(props) {
           <div className={ classNames(classes.footerItem, classes.iconContainer) } >
             <a href='https://github.com/rahul-kamat' target='_blank' rel='noopener noreferrer'>
               <img
-                className={ classNames(classes.icon, lightMode ? classes.lightModeIcon : null) }
+                className={ classNames(classes.icon, darkMode ? classes.darkModeIcon : null, lightMode ? classes.lightModeIcon : null) }
                 src={ github }
                 alt='github'
               />
@@ -114,7 +120,7 @@ function Footer(props) {
           <div className={ classNames(classes.footerItem, classes.iconContainer) } >
             <a href='https://instagram.com/rahul__kamat' target='_blank' rel='noopener noreferrer'>
               <img
-                className={ classNames(classes.icon, lightMode ? classes.lightModeIcon : null) }
+                className={ classNames(classes.icon, darkMode ? classes.darkModeIcon : null, lightMode ? classes.lightModeIcon : null) }
                 src={ instagram }
                 alt='instagram'
               />
@@ -124,7 +130,7 @@ function Footer(props) {
           <div className={ classNames(classes.footerItem, classes.iconContainer) } >
             <a href='https://facebook.com/rahulkamat44' target='_blank' rel='noopener noreferrer'>
               <img
-                className={ classNames(classes.icon, lightMode ? classes.lightModeIcon : null) }
+                className={ classNames(classes.icon, darkMode ? classes.darkModeIcon : null, lightMode ? classes.lightModeIcon : null) }
                 src={ facebook }
                 alt='facebook'
               />

@@ -3,7 +3,7 @@ import { createUseStyles } from 'react-jss'
 import classNames from 'classnames'
 import FadeIn from 'react-fade-in'
 import me from '../../images/me.png'
-import '../styles/scrollDownIndicator.css';
+import '../styles/scrollDownIndicator.css'
 
 const useStyles = createUseStyles({
   cardContainer: {
