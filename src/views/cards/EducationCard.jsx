@@ -1,7 +1,7 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss'
 import classNames from 'classnames'
-import Experience from './Experience'
+import Education from '../Education'
 
 const useStyles = createUseStyles({
   cardContainer: {
@@ -10,7 +10,7 @@ const useStyles = createUseStyles({
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
-    backgroundColor: '#BBBBBB',
+    backgroundColor: '#CC767A',
   },
   contentContainer: {
     display: 'flex',
@@ -48,16 +48,16 @@ const useStyles = createUseStyles({
     backgroundColor: '#333333',
   },
   darkModeBackground: {
-    backgroundColor: '#333333',
+    backgroundColor: '#000000',
   },
   darkModeText: {
     color: '#CCCCCC',
   },
   darkModeHline: {
-    backgroundColor: '#000000',
+    backgroundColor: '#333333',
   },
   lightModeBackground: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#C6C6C6',
   },
   lightModeText: {
     color: '#333333',
@@ -68,22 +68,23 @@ const useStyles = createUseStyles({
 });
 
 
-function ExperienceCard(props) {
+function EducationCard(props) {
   const { darkMode, lightMode } = props;
 
   const classes = useStyles();
 
-  const googleBullets = ['Core Team'];
-  const googleSkills = ['Coming', 'Soon'];
-
-  const amazonBullets = ['Team Placement TBD'];
-  const amazonSkills = ['Coming', 'Soon'];
-
-  const honeyBullets = ['Droplist Team'];
-  const honeySkills = ['Javascript', 'React', 'Node.js', 'Google Cloud Platform', 'Kubernetes', 'Docker', 'CircleCI', 'GraphQL', 'BigQuery', 'BigTable', 'Sendgrid'];
-
-  const dsgBullets = ['Checkout Team'];
-  const dsgSkills = ['Java', 'TypeScript', 'Angular', 'Spring Boot', 'Postman', 'REST APIs', 'JIRA', 'Redis', 'Agile', 'Pivitol Cloud Foundry'];
+  const rutgersCoursework = [
+    'Data Structures and Algorithms',
+    'Databases and Info Management',
+    'Design and Analysis of Algorithms',
+    'Computer Architecture',
+    'Linear Algebra',
+    'Mathematical Theory of Probability',
+    'Elementary Differential Equations',
+    'Multivariable Calculus',
+    'Discrete Structures',
+  ];
+  const rutgersSkills = ['Java', 'C', 'SQL', 'Maple'];
 
   const spacingBetweenExperience = (
     <React.Fragment>
@@ -97,52 +98,17 @@ function ExperienceCard(props) {
       <div className={ classes.spacingContainerTopBottom } />
       <div className={ classes.contentContainer }>
         <div className={ classNames(classes.textTitle, darkMode ? classes.darkModeText : null, lightMode ? classes.lightModeText : null) }>
-          Experience
+          Education
         </div>
       </div>
-{ /*
+
       { spacingBetweenExperience }
-        <Experience
-          companyName='Google'
-          startDate='April 2020'
-          endDate='June 2020'
-          location='Sunnyvale, CA'
-          bullets={ googleBullets }
-          skills={ googleSkills }
-          darkMode={ darkMode }
-          lightMode={ lightMode }
-        />
-        { spacingBetweenExperience }
-        <Experience
-          companyName='Amazon'
-          startDate='June 2020'
-          endDate='September 2020'
-          location='Seattle, WA'
-          bullets={ amazonBullets }
-          skills={ amazonSkills }
-          darkMode={ darkMode }
-          lightMode={ lightMode }
-        />
-*/}
-        { spacingBetweenExperience }
-        <Experience
-          companyName='Honey'
-          startDate='January 2020'
-          endDate='April 2020'
-          location='Los Angeles, CA'
-          bullets={ honeyBullets }
-          skills={ honeySkills }
-          darkMode={ darkMode }
-          lightMode={ lightMode }
-        />
-        { spacingBetweenExperience }
-        <Experience
-          companyName='DICK&apos;S Sporting Goods'
-          startDate='May 2019'
-          endDate='August 2019'
-          location='Pittsburgh, PA'
-          bullets={ dsgBullets }
-          skills={ dsgSkills }
+        <Education
+          schoolName='Rutgers University'
+          graduationDate='May 2021'
+          location='New Brunswick, NJ'
+          bullets={ rutgersCoursework }
+          skills={ rutgersSkills }
           darkMode={ darkMode }
           lightMode={ lightMode }
         />
@@ -153,4 +119,4 @@ function ExperienceCard(props) {
   );
 }
 
-export default ExperienceCard;
+export default EducationCard;

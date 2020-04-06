@@ -1,8 +1,8 @@
 import React from 'react';
-import BioCard from './BioCard';
-import InformationCard from './InformationCard'
-import ExperienceCard from './ExperienceCard'
-import EducationCard from './EducationCard'
+import BioCard from './cards/BioCard';
+import InformationCard from './cards/InformationCard'
+import ExperienceCard from './cards/ExperienceCard'
+import EducationCard from './cards/EducationCard'
 import Header from '../Runnings/Header'
 import Footer from '../Runnings/Footer'
 import { DarkMode } from '../store'

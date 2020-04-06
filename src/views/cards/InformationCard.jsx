@@ -1,7 +1,7 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss'
 import classNames from 'classnames'
-import InformationTerminal from './InformationTerminal'
+import InformationTerminal from '../InformationTerminal'
 
 const useStyles = createUseStyles({
   cardContainer: {
