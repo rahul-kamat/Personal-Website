@@ -1,7 +1,7 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss'
 import classNames from 'classnames'
-import Experience from '../Experience'
+import Experience from '../formatters/Experience'
 
 const useStyles = createUseStyles({
   cardContainer: {
