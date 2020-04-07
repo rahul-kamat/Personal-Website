@@ -63,7 +63,7 @@ const useStyles = createUseStyles({
 function ContactCard(props) {
 
   const { darkMode, lightMode } = props;
-
+ console.log('props', props);
   const classes = useStyles();
 
   return (
@@ -74,9 +74,13 @@ function ContactCard(props) {
           Contact me
         </div>
       </div>
-
-      <MyForm />
-
+      <div className={ classes.spacingContainer } />
+      <div className={ classes.spacingContainer } />
+      { console.log('here', darkMode, lightMode) }
+      <MyForm
+        darkMode={ darkMode }
+        lightMode={ lightMode }
+      />
       <div className={ classes.spacingContainer } />
       <div className={ classes.spacingContainer } />
       <div className={ classes.spacingContainerTopBottom } />

@@ -1,41 +1,53 @@
 import React from 'react';
 import './myform.css';
-
+import classNames from 'classnames';
 
 class MyForm extends React.Component {
   constructor(props) {
     super(props);
     this.submitForm = this.submitForm.bind(this);
+    console.log('testing :: props', props);
+    const { darkMode, lightMode } = props;
     this.state = {
-      status: ""
+      status: "",
     };
   }
 
   render() {
     const { status } = this.state;
+    const { darkMode, lightMode } = this.props;
 
     return (
-      <form
-        onSubmit={this.submitForm}
-        action="https://formspree.io/xknvjjjl"
-        method="POST"
-      >
-        { /* <!-- add your custom form HTML here --> */ }
-        <div className={ "formContainer" }>
-          <label>Name:</label>
-          <input type="text" name="_name" placeholder="Full Name"/>
 
-          <label>Email:</label>
-          <input type="text" name="_replyto" />
-
-          <label>Message:</label>
-          <input type="text" name="message" />
-        <label>Message:</label>
-        <input type="text" name="message" />
-        {status === "SUCCESS" ? <p>Thanks!</p> : <button>Submit</button>}
-        {status === "ERROR" && <p>Ooops! There was an error.</p>}
-        </div>
+      <div className={ classNames('container') }>
+        <form
+          onSubmit={this.submitForm}
+          action="https://formspree.io/xknvjjjl"
+          method="POST"
+        >
+        <ul class="flex-outer">
+          <li>
+            <label for="first-name" className={ classNames(darkMode ? 'labelDarkMode' : null, lightMode ? 'labelLightMode' : null) }>First Name</label>
+            <input class="textAreaLightMode" type="text" id="first-name" placeholder="Enter your first name here" />
+          </li>
+          <li>
+            <label for="last-name" className={ classNames(darkMode ? 'labelDarkMode' : null, lightMode ? 'labelLightMode' : null) }>Last Name</label>
+            <input type="text" id="last-name" placeholder="Enter your last name here" className={ classNames(darkMode ? 'textAreaDarkMode' : null, lightMode ? 'textAreaLightMode' : null) }/>
+          </li>
+          <li>
+            <label for="email" className={ classNames(darkMode ? 'labelDarkMode' : null, lightMode ? 'labelLightMode' : null) }>Email</label>
+            <input type="email" id="email" placeholder="Enter your email here" />
+          </li>
+          <li>
+            <label for="message" className={ classNames(darkMode ? 'labelDarkMode' : null, lightMode ? 'labelLightMode' : null) }>Message</label>
+            <textarea rows="6" id="message" placeholder="Enter your message here" className='textAreaLightMode'></textarea>
+          </li>
+          <li>
+          <button type="submit">Submit</button>
+          </li>
+        </ul>
       </form>
+    </div>
     );
   }
 
