@@ -70,7 +70,7 @@ const useStyles = createUseStyles({
     fontWeight: '1000',
   },
   nameText: {
-    fontFamily: 'Lucida Sans Unicode, Lucida Grande, sans-serif',
+    fontFamily: 'Roboto, sans-serif',
     fontSize: '21px',
     fontWeight: '570',
     letterSpacing: '1px',
@@ -142,7 +142,7 @@ function Header(props) {
       <div className={ classes.headerContainer }>
         <div className={ classes.spacingContainer } />
           <div className={ classes.infoContainer }>
-          
+
             <div className={ classes.nameContainer }>
               <div className={ classNames(classes.nameText, darkModeState.on ? classes.darkModeText : null, lightModeState.on ? classes.lightModeText : null) }>
               Rahul Kamat

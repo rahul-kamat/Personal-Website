@@ -82,7 +82,6 @@ function ContactCard(props) {
         lightMode={ lightMode }
       />
       <div className={ classes.spacingContainer } />
-      <div className={ classes.spacingContainer } />
       <div className={ classes.spacingContainerTopBottom } />
     </div>
   );

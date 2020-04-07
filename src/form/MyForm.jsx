@@ -18,17 +18,16 @@ class MyForm extends React.Component {
     const { darkMode, lightMode } = this.props;
 
     return (
-
       <div className={ classNames('container') }>
         <form
           onSubmit={this.submitForm}
           action="https://formspree.io/xknvjjjl"
           method="POST"
         >
-        <ul class="flex-outer">
+        <ul className={ classNames(darkMode ? 'flex-outer-dark' : null, lightMode ? 'flex-outer-light' : null) }>
           <li>
             <label for="first-name" className={ classNames(darkMode ? 'labelDarkMode' : null, lightMode ? 'labelLightMode' : null) }>First Name</label>
-            <input class="textAreaLightMode" type="text" id="first-name" placeholder="Enter your first name here" />
+            <input type="text" id="first-name" placeholder="Enter your first name here" />
           </li>
           <li>
             <label for="last-name" className={ classNames(darkMode ? 'labelDarkMode' : null, lightMode ? 'labelLightMode' : null) }>Last Name</label>
@@ -42,10 +41,12 @@ class MyForm extends React.Component {
             <label for="message" className={ classNames(darkMode ? 'labelDarkMode' : null, lightMode ? 'labelLightMode' : null) }>Message</label>
             <textarea rows="6" id="message" placeholder="Enter your message here" className='textAreaLightMode'></textarea>
           </li>
-          <li>
-          <button type="submit">Submit</button>
-          </li>
         </ul>
+        <div className='spacingContainer' />
+        <div className={ classNames('submitContainer', darkMode ? 'flex-outer-dark' : null, lightMode ? 'flex-outer-light' : null) }>
+          {status === "SUCCESS" ? <p classname={ classNames(darkMode ? 'formSuccessDark' : null, lightMode ? 'formSuccessLight' : null) }>Thank you!</p> : <button>Submit</button>}
+          {status === "ERROR" && <p className='formError'>Ooops! There was an error.</p>}
+        </div>
       </form>
     </div>
     );
