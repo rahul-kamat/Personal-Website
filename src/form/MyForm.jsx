@@ -13,7 +13,7 @@ class MyForm extends React.Component {
     };
   }
 
-  render() {
+  getForm() {
     const { status } = this.state;
     const { darkMode, lightMode } = this.props;
 
@@ -27,29 +27,37 @@ class MyForm extends React.Component {
         <ul className={ classNames(darkMode ? 'flex-outer-dark' : null, lightMode ? 'flex-outer-light' : null) }>
           <li>
             <label for="first-name" className={ classNames(darkMode ? 'labelDarkMode' : null, lightMode ? 'labelLightMode' : null) }>First Name</label>
-            <input type="text" id="first-name" placeholder="Enter your first name here" />
+            <input type="text" name="First Name" id="first-name" placeholder="Enter your first name here" required/>
           </li>
           <li>
             <label for="last-name" className={ classNames(darkMode ? 'labelDarkMode' : null, lightMode ? 'labelLightMode' : null) }>Last Name</label>
-            <input type="text" id="last-name" placeholder="Enter your last name here" className={ classNames(darkMode ? 'textAreaDarkMode' : null, lightMode ? 'textAreaLightMode' : null) }/>
+            <input type="text" name="Last Name" id="last-name" placeholder="Enter your last name here" className={ classNames(darkMode ? 'textAreaDarkMode' : null, lightMode ? 'textAreaLightMode' : null) } required/>
           </li>
           <li>
             <label for="email" className={ classNames(darkMode ? 'labelDarkMode' : null, lightMode ? 'labelLightMode' : null) }>Email</label>
-            <input type="email" id="email" placeholder="Enter your email here" />
+            <input type="email" name="Email" id="email" placeholder="Enter your email here" required/>
           </li>
           <li>
             <label for="message" className={ classNames(darkMode ? 'labelDarkMode' : null, lightMode ? 'labelLightMode' : null) }>Message</label>
-            <textarea rows="6" id="message" placeholder="Enter your message here" className='textAreaLightMode'></textarea>
+            <textarea rows="6" name="Message" id="message" placeholder="Enter your message here" className='textAreaLightMode' required />
           </li>
         </ul>
         <div className='spacingContainer' />
         <div className={ classNames('submitContainer', darkMode ? 'flex-outer-dark' : null, lightMode ? 'flex-outer-light' : null) }>
-          {status === "SUCCESS" ? <p classname={ classNames(darkMode ? 'formSuccessDark' : null, lightMode ? 'formSuccessLight' : null) }>Thank you!</p> : <button>Submit</button>}
+          {status === "SUCCESS" ? <p className={ classNames(darkMode ? 'formSuccessDark' : null, lightMode ? 'formSuccessLight' : null) }>Thank you!</p> : <button>Submit</button>}
           {status === "ERROR" && <p className='formError'>Ooops! There was an error.</p>}
         </div>
       </form>
     </div>
     );
+  }
+
+  render() {
+    const { status } = this.state;
+
+    const response = this.getForm();
+
+    return response;
   }
 
   submitForm(ev) {

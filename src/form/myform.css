@@ -199,8 +199,7 @@
   color: #CCCCCC;
   font-family: 'Poppins', sans-serif;
   letter-spacing: .5px;
-  font-size: 17px;
-  align-self: flex-end;
+  font-size: 25px;
 }
 
 /* Light Mode CSS */
@@ -286,10 +285,9 @@
   color: #FFFFFF;
 }
 
-.formSuccessDark {
+.formSuccessLight {
   color: #333333;
   font-family: 'Poppins', sans-serif;
   letter-spacing: .5px;
-  font-size: 17px;
-  align-self: flex-end;
+  font-size: 25px;
 }
