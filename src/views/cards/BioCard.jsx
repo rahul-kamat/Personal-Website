@@ -31,8 +31,19 @@ const useStyles = createUseStyles({
     },
   },
   imgMe: {
-    width: '100%',
+    width: '50%',
     height: 'auto',
+    borderRadius: '50%',
+    border: '1.5px solid',
+    borderColor: '#FFFFFF',
+    position: 'relative',
+    overflow: 'hidden',
+    transition: '.7s',
+    '&:hover': {
+      webkitTransform: 'scale(1.1)',
+      msTransform: 'scale(1.1)',
+      transform: 'scale(1.1)',
+    },
   },
   textContainer: {
     display: 'flex',
@@ -96,13 +107,13 @@ function BioCard(props) {
   const classes = useStyles();
 
   const imgMe = (
-    <div className={ classNames(classes.imageCropper, darkMode ? classes.darkModeImageBorder : null, lightMode ? classes.lightModeImageBorder : null) }>
+    //<div className={ classNames(classes.imageCropper, darkMode ? classes.darkModeImageBorder : null, lightMode ? classes.lightModeImageBorder : null) }>
       <img
-        className={ classes.imgMe }
+        className={ classNames(classes.imgMe, darkMode ? classes.darkModeImageBorder : null, lightMode ? classes.lightModeImageBorder : null) }
         src={ me }
         alt='pic of me!'
       />
-    </div>
+    //</div>
   );
 
   return (
