@@ -129,6 +129,9 @@ function InformationTerminal(props) {
     </a>
   );
 
+  const companyNames = 'Honey, DICK\'S Sporting Goods';
+  const companyNamesIncludingIncoming = 'Google, Amazon, Honey, DICK\'S Sporting Goods';
+
 /*
   const resume = (
     <a
@@ -268,7 +271,7 @@ function InformationTerminal(props) {
           > Rahul.workExperience
         </div>
         <div className={ classNames(classes.text, classes.textInfo, darkMode ? classes.darkModeText : null, lightMode ? classes.lightModeText : null) }>
-          => "Software Engineering Intern @ Google, Amazon, Honey, DICK'S Sporting Goods"
+          => "Software Engineering Intern @ { companyNames }"
         </div>
         <div className={ classes.spacingContainer } />
 
