@@ -120,18 +120,22 @@ function BioCard(props) {
     <div className={ classNames(classes.cardContainer, darkMode ? classes.darkModeBackground : null, lightMode ? classes.lightModeBackground : null) }>
       { imgMe }
       <div className={ classes.textContainer }>
-      <div className={ classes.spacingContainer } />
-      <FadeIn delay='500' transitionDuration='1800'>
-        <div className={ classNames(classes.text, classes.name, darkMode ? classes.darkModeText : null, lightMode ? classes.lightModeText : null) }>
-        Hi! I'm Rahul.
+        <div className={ classes.spacingContainer } />
+          <FadeIn delay='500' transitionDuration='1800'>
+            <div className={ classNames(classes.text, classes.name, darkMode ? classes.darkModeText : null, lightMode ? classes.lightModeText : null) }>
+            Hi! I'm Rahul.
+            </div>
+            <div className={ classNames(classes.text, classes.about, darkMode ? classes.darkModeText : null, lightMode ? classes.lightModeText : null) }>
+            I'm a full-stack software engineer, obsessed with user-driven application devlopment and consumer-facing software products.
+            </div>
+          </FadeIn>
+          <div className={ classes.spacingContainer } />
+          <div className={ classes.spacingContainer } />
         </div>
-        <div className={ classNames(classes.text, classes.about, darkMode ? classes.darkModeText : null, lightMode ? classes.lightModeText : null) }>
-        I'm a full-stack software engineer, obsessed with user-driven application devlopment and consumer-facing software products.
-        </div>
-      </FadeIn>
-      </div>
       <div className={ classes.spacingContainerTopBottom } />
-      <div className={ 'topPanel' } />
+      <FadeIn delay='500' transitionDuration='3600'>
+       <div className={ 'scrollDown' } />
+      </FadeIn>
       <div className={ classes.spacingContainerTopBottom } />
     </div>
   );
