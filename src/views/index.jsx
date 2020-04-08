@@ -8,7 +8,6 @@ import Header from '../Runnings/Header'
 import Footer from '../Runnings/Footer'
 import { DarkMode } from '../store'
 import { LightMode } from '../store'
-import { HashLink as Link } from 'react-router-hash-link';
 
 function Home(props) {
   const darkModeState = React.useContext(DarkMode.State)

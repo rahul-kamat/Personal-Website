@@ -76,7 +76,6 @@ function ContactCard(props) {
       </div>
       <div className={ classes.spacingContainer } />
       <div className={ classes.spacingContainer } />
-      { console.log('here', darkMode, lightMode) }
       <MyForm
         darkMode={ darkMode }
         lightMode={ lightMode }

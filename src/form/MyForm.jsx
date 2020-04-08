@@ -7,7 +7,6 @@ class MyForm extends React.Component {
     super(props);
     this.submitForm = this.submitForm.bind(this);
     console.log('testing :: props', props);
-    const { darkMode, lightMode } = props;
     this.state = {
       status: "",
     };
@@ -53,10 +52,7 @@ class MyForm extends React.Component {
   }
 
   render() {
-    const { status } = this.state;
-
     const response = this.getForm();
-
     return response;
   }
 
