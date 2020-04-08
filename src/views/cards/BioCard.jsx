@@ -31,7 +31,7 @@ const useStyles = createUseStyles({
     },
   },
   imgMe: {
-    width: '50%',
+    width: '40%',
     height: 'auto',
     borderRadius: '50%',
     border: '1.5px solid',
@@ -118,6 +118,7 @@ function BioCard(props) {
 
   return (
     <div className={ classNames(classes.cardContainer, darkMode ? classes.darkModeBackground : null, lightMode ? classes.lightModeBackground : null) }>
+      <div className={ classes.spacingContainer } />
       { imgMe }
       <div className={ classes.textContainer }>
         <div className={ classes.spacingContainer } />
