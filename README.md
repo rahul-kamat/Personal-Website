@@ -1,4 +1,4 @@
 Welcome to my personal website repo!
 
 Links:
-https://rahul-kamat.github.io/Personal-Website/
+https://rahul-kamat.github.io
