@@ -31,7 +31,8 @@ const useStyles = createUseStyles({
     },
   },
   imgMe: {
-    width: '40%',
+    width: '50%',
+    maxWidth: '300px',
     height: 'auto',
     borderRadius: '50%',
     border: '1.5px solid',
