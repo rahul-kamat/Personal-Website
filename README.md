@@ -1,3 +1,3 @@
 Welcome to my personal website repo!
 
-Visit https://www.rahulkamat.com
+Visit www.rahulkamat.com
