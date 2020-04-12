@@ -128,7 +128,7 @@ function BioCard(props) {
             Hi! I'm Rahul.
             </div>
             <div className={ classNames(classes.text, classes.about, darkMode ? classes.darkModeText : null, lightMode ? classes.lightModeText : null) }>
-            I'm a full-stack software engineer, obsessed with user-driven application devlopment and consumer-facing software products.
+            I'm a full-stack software engineer, obsessed with user-driven application development and consumer-facing software products.
             </div>
           </FadeIn>
           <div className={ classes.spacingContainer } />
