@@ -63,7 +63,6 @@ const useStyles = createUseStyles({
 function ContactCard(props) {
 
   const { darkMode, lightMode } = props;
- console.log('props', props);
   const classes = useStyles();
 
   return (

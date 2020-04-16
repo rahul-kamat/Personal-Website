@@ -6,7 +6,6 @@ class MyForm extends React.Component {
   constructor(props) {
     super(props);
     this.submitForm = this.submitForm.bind(this);
-    console.log('testing :: props', props);
     this.state = {
       status: "",
     };
