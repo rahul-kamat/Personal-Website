@@ -83,7 +83,7 @@ function ExperienceCard(props) {
   const honeySkills = ['Javascript', 'React', 'Node.js', 'Google Cloud Platform', 'Kubernetes', 'Docker', 'CircleCI', 'GraphQL'];
 
   const dsgBullets = ['Checkout Team'];
-  const dsgSkills = ['Java', 'TypeScript', 'Spring Boot',  'Angular', 'Pivitol Cloud Foundry', 'REST APIs', 'Postman', 'Redis', 'Agile', 'JIRA'];
+  const dsgSkills = ['Java', 'TypeScript', 'Spring Boot',  'Angular', 'Pivitol Cloud Foundry', 'Redis', 'REST APIs', 'Postman', 'Agile', 'JIRA'];
 
   const spacingBetweenExperience = (
     <React.Fragment>
