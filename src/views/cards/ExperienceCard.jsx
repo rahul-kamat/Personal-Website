@@ -73,11 +73,11 @@ function ExperienceCard(props) {
 
   const classes = useStyles();
 
-  const googleBullets = ['Core Team'];
-  const googleSkills = ['Coming', 'Soon'];
+  const googleBullets = ['TensorFlow Team at Google Brain'];
+  const googleSkills = ['Python', 'C++', 'TensorFlow', 'Bazel'];
 
-  const amazonBullets = ['Team Placement TBD'];
-  const amazonSkills = ['Coming', 'Soon'];
+  const amazonBullets = ['Supply Chain Optimization Technologies Team'];
+  const amazonSkills = ['Java', 'JavaScript', 'Angular', 'AWS', 'DynamoDB'];
 
   const honeyBullets = ['Droplist Team'];
   const honeySkills = ['Javascript', 'React', 'Node.js', 'Google Cloud Platform', 'Kubernetes', 'Docker', 'CircleCI', 'GraphQL'];
@@ -100,30 +100,28 @@ function ExperienceCard(props) {
           Experience
         </div>
       </div>
-{ /*
       { spacingBetweenExperience }
-        <Experience
-          companyName='Google'
-          startDate='April 2020'
-          endDate='June 2020'
-          location='Sunnyvale, CA'
-          bullets={ googleBullets }
-          skills={ googleSkills }
-          darkMode={ darkMode }
-          lightMode={ lightMode }
-        />
-        { spacingBetweenExperience }
-        <Experience
+      <Experience
           companyName='Amazon'
-          startDate='June 2020'
-          endDate='September 2020'
+          startDate='July 2020'
+          endDate='October 2020'
           location='Seattle, WA'
           bullets={ amazonBullets }
           skills={ amazonSkills }
           darkMode={ darkMode }
           lightMode={ lightMode }
         />
-*/}
+        { spacingBetweenExperience }
+        <Experience
+          companyName='Google'
+          startDate='May 2020'
+          endDate='July 2020'
+          location='Mountain View, CA'
+          bullets={ googleBullets }
+          skills={ googleSkills }
+          darkMode={ darkMode }
+          lightMode={ lightMode }
+        />
         { spacingBetweenExperience }
         <Experience
           companyName='Honey'
